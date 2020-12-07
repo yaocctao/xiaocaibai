@@ -1,0 +1,1054 @@
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False
+loading configuration file ./path/bert/chinese_L-12_H-768_A-12/bert_config.json
+Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "test",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": true,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/hp/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/hp/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias', 'lstm.weight_ih_l0', 'lstm.weight_hh_l0', 'lstm.bias_ih_l0', 'lstm.bias_hh_l0', 'lstm.weight_ih_l0_reverse', 'lstm.weight_hh_l0_reverse', 'lstm.bias_ih_l0_reverse', 'lstm.bias_hh_l0_reverse', 'lstm.weight_ih_l1', 'lstm.weight_hh_l1', 'lstm.bias_ih_l1', 'lstm.bias_hh_l1', 'lstm.weight_ih_l1_reverse', 'lstm.weight_hh_l1_reverse', 'lstm.bias_ih_l1_reverse', 'lstm.bias_hh_l1_reverse', 'fc.weight', 'fc.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='./path/data/11_29_1-2', device=device(type='cuda'), do_eval=True, do_lower_case=True, do_predict=True, do_train=True, eval_all_checkpoints=False, gradient_accumulation_steps=1, learning_rate=2e-05, local_rank=-1, logging_steps=1788, max_grad_norm=1.0, max_seq_length=428, max_steps=-1, model_name_or_path='bert-base-chinese', model_type='bert', n_gpu=1, no_cuda=False, num_train_epochs=999.0, output_dir='./outputs/test_output/bert', output_mode='classification', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=64, per_gpu_train_batch_size=10, save_steps=1788, seed=42, task_name='test', tokenizer_name='', warmup_proportion=0.1, weight_decay=0.01)
+Loading features from cached file ./path/data/11_29_1-2/cached_train_bert-base-chinese_428_test
+Creating features from dataset file at ./path/data/11_29_1-2
+Writing example 0
+*** Example ***
+guid: dev-0
+input_ids: 101 1777 2375 8038 2644 1962 9470 8168 1557 2644 1373 784 720 1399 2099 511 2145 2787 8038 1437 8617 511 1777 2375 8038 6820 3621 3189 3309 3221 3680 702 3299 1126 1384 511 2145 2787 8038 6820 3621 3189 3309 1557 511 1777 2375 8038 2190 511 2145 2787 8038 800 3221 679 12797 8175 2137 4638 1728 711 2769 3300 1126 5011 6587 511 1777 2375 8038 6929 12797 8175 702 1394 1398 1450 6963 1377 809 4638 511 2145 2787 8038 1638 511 2145 2787 8038 2769 7444 6206 4692 872 511 1777 2375 8038 6929 2940 12797 8175 702 7309 7579 1416 2496 3198 1762 1525 702 8172 677 7481 4509 6435 4638 772 1501 1399 4917 1373 784 720 511 2145 2787 8038 2769 1762 9470 8168 677 4509 6435 4638 511 1777 2375 8038 1962 4638 4692 1168 2644 4638 1394 1398 749 1557 1914 5011 1394 1398 6874 3309 1638 6874 3309 2600 3612 3621 7032 7583 3221 12797 8175 1039 511 1777 2375 8038 1638 12797 8175 5011 1394 1398 6874 3309 12797 8175 1921 12797 8175 1039 6821 5011 1394 1398 6874 3309 12797 8175 1921 12797 8175 1039 511 1777 2375 8038 1437 12797 8175 5011 1394 1398 6874 3309 12797 8175 1921 12797 8175 1039 511 1777 2375 8038 6929 12797 8175 5011 6821 4905 6874 3309 12797 8175 1921 12797 8175 1039 6874 3309 511 1777 2375 8038 2644 6874 3309 677 837 2519 928 772 4495 5385 2622 1557 2644 3315 3341 4638 6413 3221 3300 3300 784 720 7309 7579 1435 511 2145 2787 8038 1728 711 2769 4385 1762 2797 7027 4802 2141 3766 3300 7178 2769 2682 4509 6435 12797 8175 678 2454 3309 6820 3621 511 1777 2375 8038 784 720 1333 1728 1450 511 2145 2787 8038 2218 3221 511 2145 2787 8038 2218 3221 511 2145 2787 8038 1638 511 2145 2787 8038 6821 702 511 2145 2787 8038 12797 8175 6629 1408 2193 5636 1927 689 749 4197 1400 4385 1762 7028 3173 2823 2339 868 2769 12797 8175 2458 1993 2339 6598 738 679 7770 511 1777 2375 8038 1638 511 2145 2787 8038 2769 722 1184 2399 1184 4638 3198 952 6656 3301 1351 12797 8175 6629 976 749 12797 8175 4157 12797 8175 511 1777 2375 8038 1638 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 394
+*** Example ***
+guid: dev-1
+input_ids: 101 2145 2787 8038 1521 1585 511 1777 2375 8038 8617 872 1962 511 2145 2787 8038 6434 872 1962 511 2145 2787 8038 1437 872 6432 511 1777 2375 8038 8617 1044 4495 3221 8617 1044 4495 3221 1416 511 2145 2787 8038 1521 3221 511 1777 2375 8038 1521 2769 6821 6804 3221 9470 8168 4638 511 1777 2375 8038 2644 6929 702 12797 8175 1779 7178 2582 720 6820 3766 6820 6822 3341 511 2145 2787 8038 1511 679 4761 6887 679 4761 6887 1557 6821 4761 6887 2769 5023 12797 8175 678 511 2145 2787 8038 872 3188 4197 1557 679 3221 679 3221 679 3221 2769 2769 679 3221 4638 511 1777 2375 8038 5023 12797 8175 678 511 1777 2375 8038 2769 12797 8175 4157 7164 4638 3198 952 5314 2644 2802 4510 6413 2644 6206 6432 5023 12797 8175 678 12797 8175 5314 2644 2802 4510 6413 738 6963 5023 12797 8175 678 511 2145 2787 8038 1521 679 3221 679 3221 511 2145 2787 8038 679 3221 2769 1157 1157 6432 2769 6432 872 955 749 872 5314 2769 2802 6814 4510 6413 1408 511 2145 2787 8038 1638 872 6432 872 6432 511 1777 2375 8038 2218 3221 4385 1762 3221 6821 3416 4638 12797 8175 4157 7164 2769 812 6821 6804 1062 1385 833 3389 6572 511 2145 2787 8038 1557 511 1777 2375 8038 2644 6821 6804 1963 3362 6432 6820 3221 3227 4850 6874 3309 4307 2578 4638 6413 833 6853 769 1168 7770 511 1777 2375 8038 9470 8168 4761 6887 1416 511 2145 2787 8038 1521 511 1777 2375 8038 800 4638 6413 800 812 6821 6804 833 5468 5143 2644 4638 511 1777 2375 8038 3301 1351 511 1777 2375 8038 2772 5442 2157 782 511 1777 2375 8038 2376 2644 2828 2644 4638 6821 702 7178 4761 6887 1416 511 2145 2787 8038 12797 8175 4157 4381 1036 679 6121 2769 1728 711 2769 6821 833 1036 677 4408 1036 749 2769 738 3766 3766 3198 7313 1521 511 1777 2375 8038 2644 677 4408 2853 702 12797 8175 1146 7164 3198 7313 2218 1905 4415 749 511 1777 2375 8038 2769 738 2769 2682 2644 6821 702 2399 6768 782 738 679 5635 754 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 1 (id = 1)
+input length: 382
+*** Example ***
+guid: dev-2
+input_ids: 101 1777 2375 8038 872 738 2218 6821 4157 1036 3315 6716 6206 679 4197 872 6656 2769 6382 511 2145 2787 8038 2218 3766 3300 749 12797 8175 2137 4638 511 2145 2787 8038 3683 1963 2339 6598 6963 3221 2769 1416 511 2145 2787 8038 1962 1962 2190 2769 2769 1440 6401 872 12797 8175 1146 7178 6963 3766 3300 3018 679 3926 3504 511 2145 2787 8038 4761 6887 1557 6821 702 2145 2787 2769 4385 1762 6820 2345 511 2145 2787 8038 3315 6716 6572 1296 3341 2823 2769 511 1777 2375 8038 1638 511 2145 2787 8038 3018 2769 6963 511 2145 2787 8038 1962 1408 511 2145 2787 8038 872 6206 3221 6628 4708 2769 4638 2157 782 6929 6804 511 2145 2787 8038 1962 1416 872 738 6158 3274 7463 1762 511 2145 2787 8038 5381 5317 678 6770 1962 1408 782 5489 3017 5164 872 4385 1762 998 800 998 3341 4500 2218 3341 2852 2769 2586 1557 511 2145 2787 8038 2218 6821 720 6382 2582 720 1215 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 1 (id = 1)
+input length: 178
+*** Example ***
+guid: dev-3
+input_ids: 101 1777 2375 8038 6929 872 1377 809 1044 6820 1126 12797 8175 1779 7178 1044 6820 12797 8175 3309 6820 3221 12797 8175 1779 7178 2190 1416 511 1777 2375 8038 2769 6821 6804 1377 809 2218 3221 6432 6818 3309 2208 5314 2644 2802 4510 6413 511 1777 2375 8038 2644 4692 2218 3221 6432 2902 2769 812 1062 1385 4638 6226 2137 2553 7557 1044 5314 3301 1351 2802 4510 6413 5314 2644 2802 4510 6413 511 1777 2375 8038 1437 12797 8175 833 1036 2769 6821 6804 2218 6432 5314 2644 3301 1351 2802 4510 6413 2644 2361 3307 2769 812 5314 2644 3301 1351 2802 4510 6413 2190 1416 511 2145 2787 8038 6929 872 4385 1762 2692 2590 2218 3221 6432 6206 4255 2769 6858 6380 2497 3221 1416 511 1777 2375 8038 679 3221 2769 4638 2692 2590 2218 3221 6432 2644 1525 2586 1044 6820 12797 8175 3309 3309 3621 2769 6206 5314 800 812 2802 4510 6413 784 720 4638 2376 2644 2454 3309 679 2218 2533 749 1658 2190 1416 1348 3766 6375 2644 6820 1059 3621 511 2145 2787 8038 872 2339 1384 3221 1914 2208 749 872 2339 1384 3221 1914 2208 749 511 1777 2375 8038 1437 2769 2339 1384 3221 1416 3766 1068 5143 2644 1377 809 5314 2769 1216 1557 2769 6963 3221 1394 4415 1394 6226 4638 6656 872 3765 6858 511 2145 2787 8038 1437 872 6432 872 6432 2339 1384 3221 1914 2208 511 1777 2375 8038 6929 872 4924 5023 12797 8175 678 511 2145 2787 8038 1638 511 1777 2375 8038 1638 511 1777 2375 8038 2769 4638 2339 1384 3221 800 12797 8175 511 2145 2787 8038 12797 8175 3221 1408 511 1777 2375 8038 2190 511 2145 2787 8038 6929 4385 1762 6929 702 2769 6206 3221 2802 2145 3302 1377 809 3389 2533 1168 872 4638 2339 1384 511 1777 2375 8038 2496 4197 1377 809 749 511 2145 2787 8038 679 6586 1998 1450 511 1777 2375 8038 2769 2218 2563 749 1435 511 2145 2787 8038 2361 3307 3221 1408 511 1777 2375 8038 1638 511 1777 2375 8038 2190 2644 1377 809 2802 4510 6413 3766 1068 5143 511 1777 2375 8038 1493 930 4638 6858 6413 6963 3221 3300 2497 7509 4638 511 1777 2375 8038 2769 5018 12797 8175 1450 2218 3221 6432 738 3766 3300 6802 7733 2644 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 1 (id = 1)
+input length: 408
+*** Example ***
+guid: dev-4
+input_ids: 101 2145 2787 8038 6929 872 2218 2207 511 1777 2375 8038 1638 511 1777 2375 8038 2644 3209 4635 511 2145 2787 8038 4708 1377 809 5632 2346 1557 511 1777 2375 8038 1638 511 1777 2375 8038 1557 511 1777 2375 8038 2644 1962 2769 6821 6804 3766 3300 1291 1555 1044 4495 2769 738 679 3221 6432 1086 1469 2644 1291 1555 2769 3221 1762 998 3119 511 2145 2787 8038 2769 4761 6887 1408 2769 6432 872 2218 5314 2769 749 6206 679 3209 1921 6820 5314 872 511 1777 2375 8038 2769 2769 1131 784 720 6206 6820 5314 2644 2644 1762 2769 812 1062 1385 6963 3766 3300 1343 4500 749 2769 1131 784 720 4685 928 872 1435 511 2145 2787 8038 1638 3221 1557 511 2145 2787 8038 6929 6929 2218 3221 1658 2792 809 511 1777 2375 8038 872 3300 784 720 966 2533 2769 4685 928 2644 2157 7027 3300 784 720 966 7178 4638 6375 2769 3341 5314 2769 868 2850 2852 1408 2769 955 7178 5314 872 511 2145 2787 8038 2792 809 6432 511 2145 2787 8038 2769 2769 2990 3766 3300 2990 1435 2769 1567 1567 691 6205 6963 3766 3300 511 2145 2787 8038 6820 4638 1435 511 2145 2787 8038 1638 511 1777 2375 8038 928 4500 738 3766 3300 2897 2850 2852 749 691 6205 738 3766 3300 749 6929 2769 1131 784 720 6206 2828 7178 955 5314 872 1557 511 2145 2787 8038 1638 511 2145 2787 8038 1638 1962 511 2145 2787 8038 1638 511 2145 2787 8038 6929 6821 6804 4638 6413 3209 1921 1905 4415 511 1777 2375 8038 1638 511 1777 2375 8038 6929 872 3209 1921 3146 702 9470 8168 677 7305 1416 2769 738 679 2682 6432 749 872 812 12797 8175 702 2207 2111 2094 4867 12797 8175 4684 4692 4708 2957 1962 1416 511 2145 2787 8038 1437 1377 809 3766 7309 7579 7390 3198 6820 12797 8175 2399 1450 511 1777 2375 8038 1086 6224 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 1 (id = 1)
+input length: 344
+Saving features into cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.7808641975308642
+Configuration saved in ./outputs/test_output/bert/checkpoint-1788/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-1788/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-1788
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8395061728395061
+Configuration saved in ./outputs/test_output/bert/checkpoint-3576/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-3576/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-3576
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8364197530864198
+Configuration saved in ./outputs/test_output/bert/checkpoint-5364/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-5364/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-5364
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8487654320987654
+Configuration saved in ./outputs/test_output/bert/checkpoint-7152/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-7152/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-7152
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8487654320987654
+Configuration saved in ./outputs/test_output/bert/checkpoint-8940/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-8940/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-8940
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8533950617283951
+Configuration saved in ./outputs/test_output/bert/checkpoint-10728/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-10728/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-10728
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8611111111111112
+Configuration saved in ./outputs/test_output/bert/checkpoint-12516/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-12516/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-12516
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8719135802469136
+Configuration saved in ./outputs/test_output/bert/checkpoint-14304/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-14304/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-14304
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8688271604938271
+Configuration saved in ./outputs/test_output/bert/checkpoint-16092/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-16092/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-16092
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8641975308641975
+Configuration saved in ./outputs/test_output/bert/checkpoint-17880/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-17880/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-17880
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8425925925925926
+Configuration saved in ./outputs/test_output/bert/checkpoint-19668/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-19668/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-19668
+Loading features from cached file ./path/data/11_29_1-2/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8595679012345679
+Configuration saved in ./outputs/test_output/bert/checkpoint-21456/config.json
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False
+loading configuration file ./path/bert/chinese_L-12_H-768_A-12/bert_config.json
+Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "test",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": true,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/hp/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/hp/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias', 'lstm.weight_ih_l0', 'lstm.weight_hh_l0', 'lstm.bias_ih_l0', 'lstm.bias_hh_l0', 'lstm.weight_ih_l0_reverse', 'lstm.weight_hh_l0_reverse', 'lstm.bias_ih_l0_reverse', 'lstm.bias_hh_l0_reverse', 'lstm.weight_ih_l1', 'lstm.weight_hh_l1', 'lstm.bias_ih_l1', 'lstm.bias_hh_l1', 'lstm.weight_ih_l1_reverse', 'lstm.weight_hh_l1_reverse', 'lstm.bias_ih_l1_reverse', 'lstm.bias_hh_l1_reverse', 'fc.weight', 'fc.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='./path/data/11_29_1-2', device=device(type='cuda'), do_eval=False, do_lower_case=True, do_predict=True, do_train=False, eval_all_checkpoints=False, gradient_accumulation_steps=1, learning_rate=2e-05, local_rank=-1, logging_steps=1788, max_grad_norm=1.0, max_seq_length=428, max_steps=-1, model_name_or_path='bert-base-chinese', model_type='bert', n_gpu=1, no_cuda=False, num_train_epochs=999.0, output_dir='./outputs/test_output/bert', output_mode='classification', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=64, per_gpu_train_batch_size=10, save_steps=1788, seed=42, task_name='test', tokenizer_name='', warmup_proportion=0.1, weight_decay=0.01)
+Model name './outputs/test_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming './outputs/test_output/bert' is a path or url to a directory containing tokenizer files.
+Didn't find file ./outputs/test_output/bert/added_tokens.json. We won't load it.
+Didn't find file ./outputs/test_output/bert/special_tokens_map.json. We won't load it.
+Didn't find file ./outputs/test_output/bert/tokenizer_config.json. We won't load it.
+loading file ./outputs/test_output/bert/vocab.txt
+loading file None
+loading file None
+loading file None
+Evaluate the following checkpoints: ['./outputs/test_output/bert']
+loading configuration file ./outputs/test_output/bert/config.json
+Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "test",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": true,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file ./outputs/test_output/bert/pytorch_model.bin
+Creating features from dataset file at ./path/data/11_29_1-2
+Writing example 0
+*** Example ***
+guid: test-0
+input_ids: 101 1777 2375 8038 2644 1962 9470 8168 511 1777 2375 8038 2769 3209 1921 2682 12797 8175 2682 1408 511 1777 2375 8038 679 677 6929 2218 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 29
+*** Example ***
+guid: test-1
+input_ids: 101 2145 2787 8038 2849 3624 2769 4385 1762 3187 3791 2970 1420 2644 4638 4510 6413 3315 3613 1461 1373 2199 809 9470 8168 3867 2622 4638 3175 2466 6858 4761 2769 511 2145 2787 8038 2697 6468 2644 4638 3341 4510 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 44
+*** Example ***
+guid: test-2
+input_ids: 101 2145 2787 8038 1585 511 1777 2375 8038 1638 511 2145 2787 8038 1585 511 1777 2375 8038 8617 2644 1962 511 2145 2787 8038 6434 511 1777 2375 8038 8617 1957 1894 3221 1416 511 2145 2787 8038 1638 2190 511 1777 2375 8038 8617 1957 1894 2644 1962 4385 1762 12797 8175 4157 749 2769 511 1777 2375 8038 704 1744 1036 2094 722 1400 6206 5031 2418 872 749 6821 3667 3198 7313 3766 3300 5314 872 2157 7027 782 818 862 12797 8175 702 782 2802 4510 6413 3766 5314 872 2802 4510 6413 511 1777 2375 8038 6821 3416 2769 6821 6804 5031 2418 872 749 872 6821 6804 872 3297 6629 4772 3300 12797 8175 702 6820 3621 2578 2428 1469 2769 6432 12797 8175 678 1962 1416 511 2145 2787 8038 1638 511 2145 2787 8038 2769 679 2769 679 3221 6656 872 6432 749 1658 2769 4385 1762 2141 1762 3766 3300 4500 749 2769 833 6820 6822 1343 749 511 1777 2375 8038 2190 1416 511 1777 2375 8038 6929 1957 1894 2644 4385 1762 2644 2644 4385 1762 3221 12797 8175 1146 7178 3766 3300 3766 3300 1658 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 2145 2787 8038 791 1921 2769 4385 1762 3766 3300 6814 1126 1921 2769 3300 749 2769 833 6820 3926 3504 511 2145 2787 8038 1638 511 1777 2375 8038 6814 1126 1921 3300 749 511 1777 2375 8038 6929 1957 1894 2644 2644 738 4761 6887 2190 1416 2769 2218 3221 6432 4635 749 6821 702 7178 2644 3612 1062 1385 738 679 3221 6432 3612 1779 7178 2769 1469 2644 2218 3221 1762 955 3766 784 720 4500 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 2769 1036 2094 6821 6804 1962 3417 2644 2218 3221 5464 12797 8175 678 1493 812 2218 3221 2207 12797 8175 702 2835 704 4638 1215 3791 2828 6821 702 752 2658 6237 1104 12797 8175 678 2190 1416 511 1777 2375 8038 2769 738 2218 1962 1962 3777 2644 1493 812 6237 1104 6821 702 4268 4268 2769 738 679 2682 5314 872 2157 782 2157 782 3301 1351 2802 4510 6413 511 1777 2375 8038 2190 1416 6432 4635 749 5314 800 812 2802 4510 6413 511 2145 2787 8038 1638 511 1777 2375 8038 800 812 3300 7178 6820 3221 3766 7178 4638 6413 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 412
+*** Example ***
+guid: test-3
+input_ids: 101 1777 2375 8038 6929 4638 2644 6820 679 677 6929 738 3766 4500 1435 2190 1416 511 2145 2787 8038 2190 6929 2644 1168 3198 952 800 812 679 833 2802 1765 749 800 812 800 812 1086 955 702 955 702 955 749 955 749 800 812 738 679 1377 5543 749 6929 738 3766 4500 511 1777 2375 8038 3221 1557 511 1777 2375 8038 2190 2190 2190 2792 809 6432 511 1777 2375 8038 2190 511 1777 2375 8038 1437 1493 2218 3221 2802 2218 3221 1493 812 2218 3221 2802 4510 6413 2218 3221 2769 1469 2496 752 782 1408 3684 4994 2644 3221 3612 965 782 2769 1493 812 3777 2496 752 782 2682 2682 2682 2682 1215 3791 4197 1400 2769 6237 1104 6821 702 1215 3791 511 2145 2787 8038 1638 511 2145 2787 8038 2769 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 8617 1957 1894 511 2145 2787 8038 1638 511 1777 2375 8038 1728 711 6821 6804 2644 738 4761 6887 1493 812 6858 6413 6963 3300 2497 7509 4638 2769 6432 4635 749 2769 738 3221 5314 782 2157 2802 2339 4638 511 2145 2787 8038 1638 511 1777 2375 8038 1168 6821 702 3322 1068 2644 6432 2644 6814 1126 1921 6820 702 1728 711 6821 6858 2497 7509 4638 6413 738 679 3221 12797 8175 3613 12797 8175 3613 749 5401 3680 3613 6963 6814 1126 1921 6820 800 6929 702 1062 1385 679 4685 928 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 4761 6887 1408 511 2145 2787 8038 679 3221 511 1777 2375 8038 800 6929 702 1062 1385 872 3297 6629 4772 872 3297 6818 3300 12797 8175 702 511 1777 2375 8038 2218 3221 511 1777 2375 8038 3633 3633 6226 4638 4415 4507 2644 2644 2823 2823 702 4415 4507 872 4638 4259 1505 3633 2382 12797 8175 4157 1036 4638 1416 872 2218 6814 1126 1921 6820 511 1777 2375 8038 1285 5277 722 1400 2644 1086 6814 1126 1921 2190 1416 872 2218 6814 12797 8175 3340 738 3221 6814 12797 8175 1921 511 1777 2375 8038 6814 6814 6814 12797 8175 1921 6820 3221 6814 12797 8175 1921 1443 2644 6375 2769 812 2582 720 5314 2644 4802 2137 1557 2190 1416 511 1777 2375 8038 1638 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 403
+*** Example ***
+guid: test-4
+input_ids: 101 1777 2375 8038 2190 1416 2644 3221 6814 1126 1921 800 1168 2419 3221 6821 3416 2682 2582 720 2462 1435 2190 1416 511 1777 2375 8038 872 4638 2207 2682 12797 8175 702 1215 3791 1435 511 2145 2787 8038 6929 2769 4385 1762 1071 2141 3766 3300 784 720 1215 3791 1450 511 1777 2375 8038 1638 511 2145 2787 8038 1585 511 1777 2375 8038 6821 702 6929 2644 1762 2644 6814 1126 1921 2218 3300 784 720 1215 3791 749 1435 511 2145 2787 8038 6814 1126 1921 511 2145 2787 8038 1638 511 2145 2787 8038 6814 1126 1921 3300 4638 1450 511 2145 2787 8038 2769 511 1777 2375 8038 5507 2137 6814 1126 1921 2218 3300 749 511 1777 2375 8038 6821 702 511 2145 2787 8038 1638 511 1777 2375 8038 2190 1416 872 6814 1126 1921 3300 784 720 511 1777 2375 8038 6929 3300 784 720 1215 3791 12797 8175 2137 2523 5653 3302 6434 2190 1416 6814 1126 1921 2644 3221 1166 782 4638 955 5314 872 7178 749 800 6821 6814 1126 1921 1355 749 2339 6598 749 2190 1416 2772 5442 2772 5442 678 2218 3221 2644 4266 3678 6929 6804 5314 872 7178 749 2190 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 2769 6963 1343 6814 3851 3736 6821 6804 511 2145 2787 8038 1638 511 1777 2375 8038 3300 12797 8175 702 691 6205 5314 872 749 6206 679 872 794 1525 2462 6821 5011 7178 1435 511 2145 2787 8038 2769 4385 1762 3766 3300 2769 2582 720 2802 2769 4385 1762 3766 3300 2582 720 5031 2418 5031 2418 2644 1168 3198 952 833 2897 679 1139 3341 6820 679 679 1962 1557 511 1777 2375 8038 2190 1435 2769 2769 2769 511 1777 2375 8038 6929 511 1777 2375 8038 1957 1894 511 1777 2375 8038 1957 1894 2769 3766 6375 2644 4385 1762 511 2145 2787 8038 1638 511 1777 2375 8038 5031 2418 2769 1557 2769 3221 6432 2644 6814 1126 1921 511 1777 2375 8038 6443 5314 872 7178 6814 1126 1921 872 679 3221 1440 4197 1400 6432 6814 1126 1921 2218 5543 1905 4415 749 1408 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 2190 1416 511 1777 2375 8038 6814 1126 1921 2769 2682 7309 12797 8175 678 6814 1126 1921 511 2145 2787 8038 1638 102 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 420
+Writing example 10000
+Writing example 20000
+Writing example 30000
+Writing example 40000
+Writing example 50000
+Writing example 60000
+Writing example 70000
+Saving features into cached file ./path/data/11_29_1-2/cached_test_bert-base-chinese_428_test
+***** Running prediction  *****
+  Num examples = 74302
+  Batch size = 64
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False
+loading configuration file ./path/bert/chinese_L-12_H-768_A-12/bert_config.json
+Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "test",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": true,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/hp/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/hp/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias', 'lstm.weight_ih_l0', 'lstm.weight_hh_l0', 'lstm.bias_ih_l0', 'lstm.bias_hh_l0', 'lstm.weight_ih_l0_reverse', 'lstm.weight_hh_l0_reverse', 'lstm.bias_ih_l0_reverse', 'lstm.bias_hh_l0_reverse', 'lstm.weight_ih_l1', 'lstm.weight_hh_l1', 'lstm.bias_ih_l1', 'lstm.bias_hh_l1', 'lstm.weight_ih_l1_reverse', 'lstm.weight_hh_l1_reverse', 'lstm.bias_ih_l1_reverse', 'lstm.bias_hh_l1_reverse', 'fc.weight', 'fc.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='./path/data/11_30_1-3', device=device(type='cuda'), do_eval=False, do_lower_case=True, do_predict=True, do_train=False, eval_all_checkpoints=False, gradient_accumulation_steps=1, learning_rate=2e-05, local_rank=-1, logging_steps=1788, max_grad_norm=1.0, max_seq_length=428, max_steps=-1, model_name_or_path='bert-base-chinese', model_type='bert', n_gpu=1, no_cuda=False, num_train_epochs=999.0, output_dir='./outputs/test_output/bert', output_mode='classification', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=64, per_gpu_train_batch_size=5, save_steps=1788, seed=42, task_name='test', tokenizer_name='', warmup_proportion=0.1, weight_decay=0.01)
+Model name './outputs/test_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming './outputs/test_output/bert' is a path or url to a directory containing tokenizer files.
+Didn't find file ./outputs/test_output/bert/added_tokens.json. We won't load it.
+Didn't find file ./outputs/test_output/bert/special_tokens_map.json. We won't load it.
+Didn't find file ./outputs/test_output/bert/tokenizer_config.json. We won't load it.
+loading file ./outputs/test_output/bert/vocab.txt
+loading file None
+loading file None
+loading file None
+Evaluate the following checkpoints: ['./outputs/test_output/bert']
+loading configuration file ./outputs/test_output/bert/config.json
+Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "test",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": true,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file ./outputs/test_output/bert/pytorch_model.bin
+Creating features from dataset file at ./path/data/11_30_1-3
+Writing example 0
+*** Example ***
+guid: test-0
+input_ids: 101 1777 2375 8038 2644 1962 9470 8168 511 1777 2375 8038 2769 3209 1921 2682 12797 8175 2682 1408 511 1777 2375 8038 679 677 6929 2218 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 29
+*** Example ***
+guid: test-1
+input_ids: 101 2145 2787 8038 2849 3624 2769 4385 1762 3187 3791 2970 1420 2644 4638 4510 6413 3315 3613 1461 1373 2199 809 9470 8168 3867 2622 4638 3175 2466 6858 4761 2769 511 2145 2787 8038 2697 6468 2644 4638 3341 4510 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 44
+*** Example ***
+guid: test-2
+input_ids: 101 2145 2787 8038 1585 511 1777 2375 8038 1638 511 2145 2787 8038 1585 511 1777 2375 8038 8617 2644 1962 511 2145 2787 8038 6434 511 1777 2375 8038 8617 1957 1894 3221 1416 511 2145 2787 8038 1638 2190 511 1777 2375 8038 8617 1957 1894 2644 1962 4385 1762 12797 8175 4157 749 2769 511 1777 2375 8038 704 1744 1036 2094 722 1400 6206 5031 2418 872 749 6821 3667 3198 7313 3766 3300 5314 872 2157 7027 782 818 862 12797 8175 702 782 2802 4510 6413 3766 5314 872 2802 4510 6413 511 1777 2375 8038 6821 3416 2769 6821 6804 5031 2418 872 749 872 6821 6804 872 3297 6629 4772 3300 12797 8175 702 6820 3621 2578 2428 1469 2769 6432 12797 8175 678 1962 1416 511 2145 2787 8038 1638 511 2145 2787 8038 2769 679 2769 679 3221 6656 872 6432 749 1658 2769 4385 1762 2141 1762 3766 3300 4500 749 2769 833 6820 6822 1343 749 511 1777 2375 8038 2190 1416 511 1777 2375 8038 6929 1957 1894 2644 4385 1762 2644 2644 4385 1762 3221 12797 8175 1146 7178 3766 3300 3766 3300 1658 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 2145 2787 8038 791 1921 2769 4385 1762 3766 3300 6814 1126 1921 2769 3300 749 2769 833 6820 3926 3504 511 2145 2787 8038 1638 511 1777 2375 8038 6814 1126 1921 3300 749 511 1777 2375 8038 6929 1957 1894 2644 2644 738 4761 6887 2190 1416 2769 2218 3221 6432 4635 749 6821 702 7178 2644 3612 1062 1385 738 679 3221 6432 3612 1779 7178 2769 1469 2644 2218 3221 1762 955 3766 784 720 4500 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 2769 1036 2094 6821 6804 1962 3417 2644 2218 3221 5464 12797 8175 678 1493 812 2218 3221 2207 12797 8175 702 2835 704 4638 1215 3791 2828 6821 702 752 2658 6237 1104 12797 8175 678 2190 1416 511 1777 2375 8038 2769 738 2218 1962 1962 3777 2644 1493 812 6237 1104 6821 702 4268 4268 2769 738 679 2682 5314 872 2157 782 2157 782 3301 1351 2802 4510 6413 511 1777 2375 8038 2190 1416 6432 4635 749 5314 800 812 2802 4510 6413 511 2145 2787 8038 1638 511 1777 2375 8038 800 812 3300 7178 6820 3221 3766 7178 4638 6413 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 412
+*** Example ***
+guid: test-3
+input_ids: 101 1777 2375 8038 6929 4638 2644 6820 679 677 6929 738 3766 4500 1435 2190 1416 511 2145 2787 8038 2190 6929 2644 1168 3198 952 800 812 679 833 2802 1765 749 800 812 800 812 1086 955 702 955 702 955 749 955 749 800 812 738 679 1377 5543 749 6929 738 3766 4500 511 1777 2375 8038 3221 1557 511 1777 2375 8038 2190 2190 2190 2792 809 6432 511 1777 2375 8038 2190 511 1777 2375 8038 1437 1493 2218 3221 2802 2218 3221 1493 812 2218 3221 2802 4510 6413 2218 3221 2769 1469 2496 752 782 1408 3684 4994 2644 3221 3612 965 782 2769 1493 812 3777 2496 752 782 2682 2682 2682 2682 1215 3791 4197 1400 2769 6237 1104 6821 702 1215 3791 511 2145 2787 8038 1638 511 2145 2787 8038 2769 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 8617 1957 1894 511 2145 2787 8038 1638 511 1777 2375 8038 1728 711 6821 6804 2644 738 4761 6887 1493 812 6858 6413 6963 3300 2497 7509 4638 2769 6432 4635 749 2769 738 3221 5314 782 2157 2802 2339 4638 511 2145 2787 8038 1638 511 1777 2375 8038 1168 6821 702 3322 1068 2644 6432 2644 6814 1126 1921 6820 702 1728 711 6821 6858 2497 7509 4638 6413 738 679 3221 12797 8175 3613 12797 8175 3613 749 5401 3680 3613 6963 6814 1126 1921 6820 800 6929 702 1062 1385 679 4685 928 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 4761 6887 1408 511 2145 2787 8038 679 3221 511 1777 2375 8038 800 6929 702 1062 1385 872 3297 6629 4772 872 3297 6818 3300 12797 8175 702 511 1777 2375 8038 2218 3221 511 1777 2375 8038 3633 3633 6226 4638 4415 4507 2644 2644 2823 2823 702 4415 4507 872 4638 4259 1505 3633 2382 12797 8175 4157 1036 4638 1416 872 2218 6814 1126 1921 6820 511 1777 2375 8038 1285 5277 722 1400 2644 1086 6814 1126 1921 2190 1416 872 2218 6814 12797 8175 3340 738 3221 6814 12797 8175 1921 511 1777 2375 8038 6814 6814 6814 12797 8175 1921 6820 3221 6814 12797 8175 1921 1443 2644 6375 2769 812 2582 720 5314 2644 4802 2137 1557 2190 1416 511 1777 2375 8038 1638 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 403
+*** Example ***
+guid: test-4
+input_ids: 101 1777 2375 8038 2190 1416 2644 3221 6814 1126 1921 800 1168 2419 3221 6821 3416 2682 2582 720 2462 1435 2190 1416 511 1777 2375 8038 872 4638 2207 2682 12797 8175 702 1215 3791 1435 511 2145 2787 8038 6929 2769 4385 1762 1071 2141 3766 3300 784 720 1215 3791 1450 511 1777 2375 8038 1638 511 2145 2787 8038 1585 511 1777 2375 8038 6821 702 6929 2644 1762 2644 6814 1126 1921 2218 3300 784 720 1215 3791 749 1435 511 2145 2787 8038 6814 1126 1921 511 2145 2787 8038 1638 511 2145 2787 8038 6814 1126 1921 3300 4638 1450 511 2145 2787 8038 2769 511 1777 2375 8038 5507 2137 6814 1126 1921 2218 3300 749 511 1777 2375 8038 6821 702 511 2145 2787 8038 1638 511 1777 2375 8038 2190 1416 872 6814 1126 1921 3300 784 720 511 1777 2375 8038 6929 3300 784 720 1215 3791 12797 8175 2137 2523 5653 3302 6434 2190 1416 6814 1126 1921 2644 3221 1166 782 4638 955 5314 872 7178 749 800 6821 6814 1126 1921 1355 749 2339 6598 749 2190 1416 2772 5442 2772 5442 678 2218 3221 2644 4266 3678 6929 6804 5314 872 7178 749 2190 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 2769 6963 1343 6814 3851 3736 6821 6804 511 2145 2787 8038 1638 511 1777 2375 8038 3300 12797 8175 702 691 6205 5314 872 749 6206 679 872 794 1525 2462 6821 5011 7178 1435 511 2145 2787 8038 2769 4385 1762 3766 3300 2769 2582 720 2802 2769 4385 1762 3766 3300 2582 720 5031 2418 5031 2418 2644 1168 3198 952 833 2897 679 1139 3341 6820 679 679 1962 1557 511 1777 2375 8038 2190 1435 2769 2769 2769 511 1777 2375 8038 6929 511 1777 2375 8038 1957 1894 511 1777 2375 8038 1957 1894 2769 3766 6375 2644 4385 1762 511 2145 2787 8038 1638 511 1777 2375 8038 5031 2418 2769 1557 2769 3221 6432 2644 6814 1126 1921 511 1777 2375 8038 6443 5314 872 7178 6814 1126 1921 872 679 3221 1440 4197 1400 6432 6814 1126 1921 2218 5543 1905 4415 749 1408 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 2190 1416 511 1777 2375 8038 6814 1126 1921 2769 2682 7309 12797 8175 678 6814 1126 1921 511 2145 2787 8038 1638 102 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 420
+Writing example 10000
+Writing example 20000
+Writing example 30000
+Writing example 40000
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False
+loading configuration file ./path/bert/chinese_L-12_H-768_A-12/bert_config.json
+Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "test",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": true,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/hp/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/hp/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias', 'lstm.weight_ih_l0', 'lstm.weight_hh_l0', 'lstm.bias_ih_l0', 'lstm.bias_hh_l0', 'lstm.weight_ih_l0_reverse', 'lstm.weight_hh_l0_reverse', 'lstm.bias_ih_l0_reverse', 'lstm.bias_hh_l0_reverse', 'lstm.weight_ih_l1', 'lstm.weight_hh_l1', 'lstm.bias_ih_l1', 'lstm.bias_hh_l1', 'lstm.weight_ih_l1_reverse', 'lstm.weight_hh_l1_reverse', 'lstm.bias_ih_l1_reverse', 'lstm.bias_hh_l1_reverse', 'fc.weight', 'fc.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='./path/data/11_30_1-3', device=device(type='cuda'), do_eval=True, do_lower_case=True, do_predict=True, do_train=True, eval_all_checkpoints=False, gradient_accumulation_steps=1, learning_rate=2e-05, local_rank=-1, logging_steps=1788, max_grad_norm=1.0, max_seq_length=428, max_steps=-1, model_name_or_path='bert-base-chinese', model_type='bert', n_gpu=1, no_cuda=False, num_train_epochs=999.0, output_dir='./outputs/test_output/bert', output_mode='classification', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=64, per_gpu_train_batch_size=5, save_steps=1788, seed=42, task_name='test', tokenizer_name='', warmup_proportion=0.1, weight_decay=0.01)
+Creating features from dataset file at ./path/data/11_30_1-3
+Writing example 0
+*** Example ***
+guid: train-0
+input_ids: 101 2145 2787 8038 1521 511 1777 2375 8038 6434 2644 1962 2802 2817 2644 12797 8175 678 511 1777 2375 8038 1638 2644 6821 6804 4638 6413 3221 6929 702 511 1777 2375 8038 8617 2644 3221 2207 3301 1351 3221 1416 511 1777 2375 8038 2682 2553 8617 3221 872 4638 4268 4268 1408 511 1777 2375 8038 1585 872 1962 511 1777 2375 8038 872 5543 679 5543 6375 872 4638 2157 782 872 4638 872 4638 4268 4268 1968 1968 2970 12797 8175 678 4510 6413 511 1777 2375 8038 1585 872 1962 511 1777 2375 8038 6375 872 4638 4268 4268 1968 1968 2970 12797 8175 678 4510 6413 1962 1416 511 2145 2787 8038 4638 511 1777 2375 8038 1585 872 1962 2769 1762 1420 1408 511 1777 2375 8038 1638 511 1777 2375 8038 1086 6224 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 144
+*** Example ***
+guid: train-1
+input_ids: 101 2145 2787 8038 1585 511 1777 2375 8038 1585 511 1777 2375 8038 8617 2644 1962 511 2145 2787 8038 1525 7027 511 1777 2375 8038 6434 2644 1962 6821 6804 3221 872 872 511 1777 2375 8038 8617 1044 4495 1408 511 2145 2787 8038 1638 511 1777 2375 8038 1585 511 2145 2787 8038 2644 3221 511 1777 2375 8038 679 3221 1408 511 2145 2787 8038 872 6821 3221 6206 2397 1658 1450 3221 511 1777 2375 8038 6434 2769 812 6821 6804 2218 3221 9470 8168 6821 6804 2218 3221 1762 872 812 1285 3221 872 1036 2094 1408 511 2145 2787 8038 1557 6821 6804 679 3221 4638 2769 3221 511 1777 2375 8038 872 812 2397 511 1777 2375 8038 1521 1521 6929 679 1962 2692 2590 1557 2802 7231 749 1557 511 2145 2787 8038 1638 1962 511 1777 2375 8038 1962 1086 6224 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 153
+*** Example ***
+guid: train-2
+input_ids: 101 2145 2787 8038 2644 2884 2802 4638 4500 2787 3633 1762 6858 6413 704 511 2145 2787 8038 2644 1377 809 1762 4017 1898 1400 5314 800 4522 6241 4522 6241 2199 3119 1357 3633 2382 6858 6413 6589 2218 511 2145 2787 8038 872 812 3341 4510 1469 4522 6241 2769 812 833 6858 6814 4764 928 6858 4761 3322 712 818 3187 7234 4522 3466 6435 2899 3322 511 2145 2787 8038 2644 2884 2802 4638 4500 2787 3633 1762 6858 6413 704 511 2145 2787 8038 2644 1377 809 1762 4017 1898 1400 5314 800 4522 6241 4522 6241 2199 3119 1357 3633 2382 6858 6413 6589 4500 511 2145 2787 8038 2644 4638 3341 4510 1469 1155 1187 2769 812 833 6858 6814 4764 928 6858 4761 3322 712 511 2145 2787 8038 3189 3187 7557 4522 3466 6356 2899 3322 511 2145 2787 8038 1119 3247 3198 7313 3766 3300 6432 6413 4385 1762 711 2644 2899 3322 511 2145 2787 8038 2697 6468 2644 4638 3341 4510 1086 6224 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 177
+*** Example ***
+guid: train-3
+input_ids: 101 2145 2787 8038 1585 872 1962 511 1777 2375 8038 6434 1585 2644 1962 6435 7309 2644 3221 6821 702 8617 1044 4495 3221 1416 511 2145 2787 8038 1557 872 1962 872 6432 511 1777 2375 8038 1557 9470 8168 4638 1557 2644 6821 6804 6821 702 9470 8168 3777 6821 702 9470 8168 6874 3309 749 12797 8175 1066 12797 8175 1039 2644 791 1921 8172 1905 4415 12797 8175 678 1962 1416 511 2145 2787 8038 3221 1557 511 2145 2787 8038 1638 2769 12797 8175 1066 1905 4415 679 1962 2769 1377 809 1905 4415 2208 6956 1146 1408 511 1777 2375 8038 1377 809 1377 809 872 6432 511 1777 2375 8038 1638 1377 809 1377 809 4638 2644 6821 6804 1377 809 2828 6821 12797 8175 702 9470 8168 5314 1905 4415 749 1408 511 1777 2375 8038 5445 6821 12797 8175 702 511 2145 2787 8038 1521 12797 8175 702 3221 1416 511 1777 2375 8038 1557 2190 12797 8175 1066 12797 8175 702 4638 3297 1920 12797 8175 702 12797 8175 6820 3300 12797 8175 702 3221 12797 8175 6820 3300 12797 8175 702 3221 12797 8175 6820 3300 702 3221 12797 8175 2644 2828 6821 702 1905 4415 749 1962 1416 511 2145 2787 8038 1638 6821 2218 3221 702 2769 2769 6821 3416 4638 2769 511 2145 2787 8038 2769 4692 4692 1416 791 1921 1905 4415 511 2145 2787 8038 1905 4415 6929 1184 7481 12797 8175 702 1416 511 1777 2375 8038 1638 1377 809 1377 809 1962 4638 3766 3300 7309 7579 4638 6821 702 511 2145 2787 8038 1962 511 1777 2375 8038 1638 1962 4638 6929 2644 6821 6804 2218 3221 6432 2769 812 678 1286 1762 6821 702 12797 8175 4157 7164 722 1184 3389 6572 1377 809 1408 2644 1762 12797 8175 4157 7164 722 1184 2828 2124 1905 4415 2957 511 2145 2787 8038 1437 678 1286 12797 8175 4157 3221 1416 511 1777 2375 8038 1557 2190 4638 511 2145 2787 8038 6121 2769 2226 2571 2682 1215 3791 511 1777 2375 8038 1638 1962 4638 6929 6821 6804 2644 3800 2692 2519 928 1086 6224 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 367
+*** Example ***
+guid: train-4
+input_ids: 101 1777 2375 8038 2644 1962 9470 8168 2644 1373 784 720 1399 2099 511 2145 2787 8038 1638 1638 511 2145 2787 8038 1638 1164 2622 4638 6413 511 1777 2375 8038 2797 3322 1384 1400 12797 8175 855 511 2145 2787 8038 1437 12797 8175 1408 511 1777 2375 8038 1638 511 2145 2787 8038 6434 2769 3241 12797 8175 4157 511 1777 2375 8038 12797 8175 678 6121 1416 511 2145 2787 8038 1638 6566 2857 2218 6206 5018 12797 8175 3175 2807 2807 3621 511 2145 2787 8038 2807 12797 8175 511 1777 2375 8038 800 1762 7213 6121 1305 1400 12797 8175 855 511 2145 2787 8038 1638 12797 8175 511 2145 2787 8038 872 6432 2130 2768 4638 1450 511 1777 2375 8038 1638 511 1777 2375 8038 12797 8175 4924 5023 511 2145 2787 8038 7309 7579 511 2145 2787 8038 1557 2807 12797 8175 511 1777 2375 8038 9470 8168 4680 1184 2807 3621 12797 8175 2768 1216 511 2145 2787 8038 2769 1962 4638 6929 6121 6121 1086 6224 1086 6224 1086 6224 1557 1962 1660 1638 511 1777 2375 8038 2190 1435 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 193
+Writing example 10000
+Writing example 20000
+Saving features into cached file ./path/data/11_30_1-3/cached_train_bert-base-chinese_428_test
+Creating features from dataset file at ./path/data/11_30_1-3
+Writing example 0
+*** Example ***
+guid: dev-0
+input_ids: 101 1777 2375 8038 1962 872 812 1403 872 812 2255 691 5023 1765 749 6820 3766 3300 2823 1168 3221 1416 511 2145 2787 8038 1557 872 6432 2769 2255 691 3315 7032 1525 7027 2823 2769 749 2769 6820 1343 1525 7027 749 872 6432 511 2145 2787 8038 8617 872 2828 6821 8617 4638 1399 2099 872 6206 5314 2769 1420 12797 8175 1420 1568 511 1777 2375 8038 1521 7674 1044 4638 6413 2218 3221 2769 812 2600 6956 1557 6820 3300 511 1777 2375 8038 2768 1216 2199 9470 8168 2769 812 6821 6804 4638 6874 3309 928 2622 679 3175 912 6851 7463 2644 6206 5632 2346 2823 4638 6413 5632 2346 1343 3389 1506 511 2145 2787 8038 872 872 872 872 872 6432 4638 6413 872 2828 872 2849 1765 2821 5314 2769 1086 6432 12797 8175 6881 679 1962 1420 6432 1126 12797 8175 1649 872 5314 2769 6432 3300 1126 12797 8175 1086 2823 2769 1126 12797 8175 1649 2823 2769 511 1777 2375 8038 1638 511 1777 2375 8038 3221 511 1777 2375 8038 1126 12797 8175 3341 2823 872 872 679 3221 4684 2970 2802 12797 8175 1126 702 4510 6413 1658 2190 1416 511 2145 2787 8038 872 872 679 3221 6432 6963 3221 872 3766 3791 6432 872 872 1126 12797 8175 1649 2823 2769 6820 2769 3766 2496 1765 6820 3300 872 872 4696 3018 5010 1126 12797 8175 1649 872 6656 872 6432 12797 8175 678 1126 12797 8175 1649 2823 2769 511 1777 2375 8038 2769 812 1062 1385 1372 2802 749 12797 8175 702 4510 6413 511 2145 2787 8038 872 679 3221 6206 872 872 872 679 3221 6206 2582 720 2462 872 6821 3416 2462 511 1777 2375 8038 2769 812 1062 1385 3300 1126 12797 8175 1086 998 3119 2769 511 2145 2787 8038 6434 511 1777 2375 8038 6821 4905 2769 6963 3221 3300 511 1777 2375 8038 1394 868 4638 1506 511 2145 2787 8038 1638 511 1777 2375 8038 8617 1957 1894 2644 4385 1762 3221 1762 2255 691 4689 4638 1957 1894 511 2145 2787 8038 872 1157 679 3221 6206 872 872 6432 3341 6432 1343 6432 6821 763 2218 3300 4500 1408 3300 2692 2590 1408 511 1777 2375 8038 679 6381 2533 749 511 1777 2375 8038 679 3221 1416 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 1 (id = 1)
+input length: 399
+*** Example ***
+guid: dev-1
+input_ids: 101 2145 2787 8038 4197 1400 1762 8172 677 3389 738 2218 3766 3300 511 2145 2787 8038 1728 711 2769 511 1777 2375 8038 1638 511 2145 2787 8038 1728 711 2769 6821 6804 2658 1105 511 2145 2787 8038 800 511 2145 2787 8038 2769 2218 2769 1437 2769 4761 6887 800 6821 702 752 2658 809 1400 2769 2347 5307 3296 800 6820 749 3300 702 12797 8175 749 511 1777 2375 8038 1638 511 2145 2787 8038 2769 5632 2346 4385 1762 738 3766 7270 511 2145 2787 8038 1068 7241 4761 6887 800 3612 1922 1914 749 511 1777 2375 8038 1638 511 1777 2375 8038 4924 2544 511 1777 2375 8038 2207 754 5023 754 6821 702 6432 2644 4385 1762 6760 1168 800 5632 2346 3341 6237 1104 3221 1416 511 2145 2787 8038 6821 702 1408 511 2145 2787 8038 872 1044 5314 2769 6432 12797 8175 678 1416 1450 511 2145 2787 8038 872 5314 2769 6432 6206 4692 1072 860 800 3221 6206 6820 4638 3221 1914 2208 7178 2769 2769 4692 2769 6820 1450 511 2145 2787 8038 3221 1557 511 2145 2787 8038 1638 2769 4692 2769 6820 5543 679 5543 2682 1215 3791 511 2145 2787 8038 1963 3362 5543 1291 1555 2345 679 1914 4638 6413 2769 511 2145 2787 8038 2769 1044 511 2145 2787 8038 3296 800 738 6820 738 1377 809 1557 511 2145 2787 8038 1638 511 1777 2375 8038 1638 800 6821 1779 1036 4638 6413 3633 2382 4638 6413 2496 1184 6874 3309 4638 3612 3621 2218 3221 12797 8175 1914 1779 7178 511 2145 2787 8038 1638 511 2145 2787 8038 2190 511 2145 2787 8038 2190 511 2145 2787 8038 2190 1435 511 1777 2375 8038 4197 1400 4385 1762 2600 2600 3612 3621 4638 6413 3221 12797 8175 1914 1779 7178 12797 8175 1066 12797 8175 1914 1779 7178 6820 2130 722 1400 2218 1059 6956 5310 3926 749 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 2145 2787 8038 4197 1400 2769 4385 1762 7309 872 6821 702 752 2658 1557 2769 6206 6656 872 1291 1555 1658 2218 3221 800 2496 3198 955 4638 6821 702 3315 7032 3221 1638 511 1777 2375 8038 1530 511 2145 2787 8038 3221 1914 2208 2218 955 749 1377 5543 6821 702 12797 8175 5011 6820 3221 2523 1914 5011 2218 3221 12797 8175 1066 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 411
+*** Example ***
+guid: dev-2
+input_ids: 101 2145 2787 8038 1585 511 1777 2375 8038 3221 4638 511 1777 2375 8038 6434 2644 1962 511 2145 2787 8038 872 1962 511 1777 2375 8038 6434 3221 8617 1044 4495 3221 1408 511 2145 2787 8038 1372 3221 511 1777 2375 8038 1557 2769 6821 6804 3221 9470 8168 4638 511 2145 2787 8038 1638 511 1777 2375 8038 6434 2644 1962 2644 4638 9470 11497 8177 3300 702 12797 8175 1039 511 1777 2375 8038 3193 677 2339 868 782 1447 5468 5143 2644 6821 5011 3621 7555 3221 6432 791 1921 6820 511 1777 2375 8038 4385 1762 2347 5307 12797 8175 4157 1914 749 6929 6804 3221 2582 720 1726 752 1450 511 2145 2787 8038 2769 511 2145 2787 8038 2769 6656 872 6432 4638 3221 5023 7583 12797 8175 1921 800 5314 2769 1557 511 2145 2787 8038 1166 4638 1408 511 1777 2375 8038 1521 2644 3221 6432 3193 677 511 2145 2787 8038 6656 2769 6432 800 6432 872 791 1921 6820 2769 6206 511 1777 2375 8038 12797 8175 1921 2347 5307 677 749 511 2145 2787 8038 1521 511 2145 2787 8038 2769 6432 5023 702 12797 8175 1921 1416 5023 702 12797 8175 1921 2769 6963 6820 679 749 872 2218 1114 1906 2157 1469 5381 5317 1265 1921 511 2145 2787 8038 2190 1416 511 1777 2375 8038 1521 2644 6929 6804 3221 784 720 1333 1728 1450 711 784 720 6206 711 784 720 6206 5023 12797 8175 1921 749 511 2145 2787 8038 3221 6821 720 1726 752 511 2145 2787 8038 2769 12797 8175 4684 6206 6873 4708 6821 2157 1416 511 2145 2787 8038 12797 8175 4684 2870 749 511 2145 2787 8038 2769 2218 3719 1166 749 511 1777 2375 8038 872 4385 1762 511 1777 2375 8038 2644 4385 1762 2797 7027 3766 6821 5011 6598 7032 1658 3766 6821 5011 12797 8175 1914 1408 511 2145 2787 8038 6434 2769 511 2145 2787 8038 2769 4266 3678 12797 8175 1921 749 511 2145 2787 8038 1585 511 1777 2375 8038 1638 511 2145 2787 8038 4385 1762 3766 2533 1068 5143 2533 5709 1450 511 1777 2375 8038 3221 6821 3416 4638 511 1777 2375 8038 3221 6821 3416 4638 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 382
+*** Example ***
+guid: dev-3
+input_ids: 101 1777 2375 8038 1585 2644 1962 9470 10853 10816 1957 1894 1408 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 14
+*** Example ***
+guid: dev-4
+input_ids: 101 1777 2375 8038 872 679 4500 5314 1638 511 1777 2375 8038 3121 679 749 1408 511 2145 2787 8038 679 3221 872 6821 1059 3221 4129 5682 4638 511 2145 2787 8038 1963 3362 6206 3221 1377 809 934 3121 4638 6413 2124 6963 1377 809 511 2145 2787 8038 3300 12797 8175 702 3144 2099 802 6821 702 6760 6760 6572 6963 3766 3300 511 1777 2375 8038 3766 3300 3221 1416 511 2145 2787 8038 872 6821 12797 8175 4157 2582 720 749 872 3221 6443 2582 720 2802 4510 6413 6963 3766 4500 511 1777 2375 8038 2769 6820 5018 12797 8175 3613 1420 6814 6821 702 7309 7579 1435 4692 872 809 1184 738 679 2582 720 1962 511 2145 2787 8038 679 3221 5018 12797 8175 3613 6656 872 2779 2242 2769 1377 809 1355 5314 872 6821 702 800 6821 702 752 2658 3221 784 720 4307 2578 511 1777 2375 8038 872 809 1184 3766 3766 6874 3309 4638 3198 952 6432 4638 3680 12797 8175 3309 2218 1372 6820 6929 872 4385 1762 1377 679 1377 809 2902 4212 872 4638 12797 8175 3309 6572 1296 1377 809 6820 1416 511 2145 2787 8038 1557 872 3221 2769 3766 3766 3209 4635 784 720 2692 2590 1557 511 2145 2787 8038 1557 2769 3221 12797 8175 3309 12797 8175 3309 511 1777 2375 8038 1638 511 1777 2375 8038 872 679 833 2399 12797 8175 3309 6572 1296 2218 679 1962 1658 2218 3683 1963 6432 872 6874 3309 12797 8175 3309 4638 6572 1296 2644 1377 809 6820 12797 8175 3309 6572 1296 872 6821 702 6963 679 833 6820 1416 511 2145 2787 8038 6820 3300 511 2145 2787 8038 2769 6963 5543 2897 2769 6929 702 784 720 4638 6413 2769 2218 2497 7509 1525 511 1777 2375 8038 2769 6432 872 6821 720 1914 7178 872 3221 679 3221 5468 5143 3309 6572 1296 6963 679 833 6820 511 1777 2375 8038 2218 3221 1856 1091 928 2622 1762 3315 1453 12797 8175 3309 6963 3766 6820 679 5543 934 3121 1408 511 1777 2375 8038 6929 800 812 1062 511 1777 2375 8038 2521 833 1036 1408 511 2145 2787 8038 6821 3221 1372 3300 12797 8175 702 511 2145 2787 8038 12797 8175 3299 12797 8175 1384 6821 702 6821 702 12797 8175 702 6820 3621 1377 809 3227 4850 1377 809 4157 2458 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 411
+Saving features into cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.5015432098765432
+Configuration saved in ./outputs/test_output/bert/checkpoint-1788/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-1788/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-1788
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.5462962962962963
+Configuration saved in ./outputs/test_output/bert/checkpoint-3576/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-3576/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-3576
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.779320987654321
+Configuration saved in ./outputs/test_output/bert/checkpoint-5364/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-5364/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-5364
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8024691358024691
+Configuration saved in ./outputs/test_output/bert/checkpoint-7152/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-7152/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-7152
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.7993827160493827
+Configuration saved in ./outputs/test_output/bert/checkpoint-8940/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-8940/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-8940
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8148148148148148
+Configuration saved in ./outputs/test_output/bert/checkpoint-10728/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-10728/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-10728
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8117283950617284
+Configuration saved in ./outputs/test_output/bert/checkpoint-12516/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-12516/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-12516
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.808641975308642
+Configuration saved in ./outputs/test_output/bert/checkpoint-14304/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-14304/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-14304
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8503086419753086
+Configuration saved in ./outputs/test_output/bert/checkpoint-16092/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-16092/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-16092
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8302469135802469
+Configuration saved in ./outputs/test_output/bert/checkpoint-17880/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-17880/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-17880
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.7993827160493827
+Configuration saved in ./outputs/test_output/bert/checkpoint-19668/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-19668/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-19668
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8132716049382716
+Configuration saved in ./outputs/test_output/bert/checkpoint-21456/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-21456/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-21456
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8472222222222222
+Configuration saved in ./outputs/test_output/bert/checkpoint-23244/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-23244/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-23244
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8549382716049383
+Configuration saved in ./outputs/test_output/bert/checkpoint-25032/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-25032/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-25032
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8240740740740741
+Configuration saved in ./outputs/test_output/bert/checkpoint-26820/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-26820/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-26820
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8271604938271605
+Configuration saved in ./outputs/test_output/bert/checkpoint-28608/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-28608/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-28608
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.7901234567901234
+Configuration saved in ./outputs/test_output/bert/checkpoint-30396/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-30396/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-30396
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.816358024691358
+Configuration saved in ./outputs/test_output/bert/checkpoint-32184/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-32184/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-32184
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.7854938271604939
+Configuration saved in ./outputs/test_output/bert/checkpoint-33972/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-33972/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-33972
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.7808641975308642
+Configuration saved in ./outputs/test_output/bert/checkpoint-35760/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-35760/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-35760
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8055555555555556
+Configuration saved in ./outputs/test_output/bert/checkpoint-37548/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-37548/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-37548
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8179012345679012
+Configuration saved in ./outputs/test_output/bert/checkpoint-39336/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-39336/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-39336
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.7407407407407407
+Configuration saved in ./outputs/test_output/bert/checkpoint-41124/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-41124/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-41124
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8518518518518519
+Configuration saved in ./outputs/test_output/bert/checkpoint-42912/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-42912/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-42912
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8688271604938271
+Configuration saved in ./outputs/test_output/bert/checkpoint-44700/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-44700/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-44700
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8472222222222222
+Configuration saved in ./outputs/test_output/bert/checkpoint-46488/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-46488/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-46488
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.7854938271604939
+Configuration saved in ./outputs/test_output/bert/checkpoint-48276/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-48276/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-48276
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8364197530864198
+Configuration saved in ./outputs/test_output/bert/checkpoint-50064/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-50064/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-50064
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8518518518518519
+Configuration saved in ./outputs/test_output/bert/checkpoint-51852/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-51852/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-51852
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8441358024691358
+Configuration saved in ./outputs/test_output/bert/checkpoint-53640/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-53640/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-53640
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8441358024691358
+Configuration saved in ./outputs/test_output/bert/checkpoint-55428/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-55428/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-55428
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8564814814814815
+Configuration saved in ./outputs/test_output/bert/checkpoint-57216/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-57216/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-57216
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8379629629629629
+Configuration saved in ./outputs/test_output/bert/checkpoint-59004/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-59004/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-59004
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8302469135802469
+Configuration saved in ./outputs/test_output/bert/checkpoint-60792/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-60792/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-60792
+Loading features from cached file ./path/data/11_30_1-3/cached_dev_bert-base-chinese_428_test
+***** Running evaluation  *****
+  Num examples = 648
+  Batch size = 64
+***** Eval results  *****
+  acc = 0.8333333333333334
+Configuration saved in ./outputs/test_output/bert/checkpoint-62580/config.json
+Model weights saved in ./outputs/test_output/bert/checkpoint-62580/pytorch_model.bin
+Saving model checkpoint to ./outputs/test_output/bert/checkpoint-62580
+Process rank: -1, device: cuda, n_gpu: 1, distributed training: False
+loading configuration file ./path/bert/chinese_L-12_H-768_A-12/bert_config.json
+Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "test",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": true,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at /home/hp/.cache/torch/transformers/8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at /home/hp/.cache/torch/transformers/b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias', 'lstm.weight_ih_l0', 'lstm.weight_hh_l0', 'lstm.bias_ih_l0', 'lstm.bias_hh_l0', 'lstm.weight_ih_l0_reverse', 'lstm.weight_hh_l0_reverse', 'lstm.bias_ih_l0_reverse', 'lstm.bias_hh_l0_reverse', 'lstm.weight_ih_l1', 'lstm.weight_hh_l1', 'lstm.bias_ih_l1', 'lstm.bias_hh_l1', 'lstm.weight_ih_l1_reverse', 'lstm.weight_hh_l1_reverse', 'lstm.bias_ih_l1_reverse', 'lstm.bias_hh_l1_reverse', 'fc.weight', 'fc.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='./path/data/b', device=device(type='cuda'), do_eval=False, do_lower_case=True, do_predict=True, do_train=False, eval_all_checkpoints=False, gradient_accumulation_steps=1, learning_rate=2e-05, local_rank=-1, logging_steps=1788, max_grad_norm=1.0, max_seq_length=428, max_steps=-1, model_name_or_path='bert-base-chinese', model_type='bert', n_gpu=1, no_cuda=False, num_train_epochs=999.0, output_dir='./outputs/test_output/bert', output_mode='classification', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=64, per_gpu_train_batch_size=5, save_steps=1788, seed=42, task_name='test', tokenizer_name='', warmup_proportion=0.1, weight_decay=0.01)
+Model name './outputs/test_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming './outputs/test_output/bert' is a path or url to a directory containing tokenizer files.
+Didn't find file ./outputs/test_output/bert/added_tokens.json. We won't load it.
+Didn't find file ./outputs/test_output/bert/special_tokens_map.json. We won't load it.
+Didn't find file ./outputs/test_output/bert/tokenizer_config.json. We won't load it.
+loading file ./outputs/test_output/bert/vocab.txt
+loading file None
+loading file None
+loading file None
+Evaluate the following checkpoints: ['./outputs/test_output/bert']
+loading configuration file ./outputs/test_output/bert/config.json
+Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "test",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": true,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file ./outputs/test_output/bert/pytorch_model.bin
+Creating features from dataset file at ./path/data/b
+Writing example 0
+*** Example ***
+guid: test-0
+input_ids: 101 2145 2787 8038 1585 511 2145 2787 8038 1638 511 1777 2375 8038 1585 872 1962 511 2145 2787 8038 1557 872 6432 511 1777 2375 8038 1638 3221 6821 702 7770 855 2533 6821 702 8617 1044 4495 3221 1416 511 2145 2787 8038 1638 511 2145 2787 8038 872 2823 6443 2823 6443 955 4638 3221 1416 511 1777 2375 8038 2190 1557 800 1762 2769 812 1062 1385 1215 4638 6821 702 3612 3621 3766 6820 4638 1658 800 6432 4638 3221 6375 2644 6821 6804 1343 6858 4761 1168 800 749 1408 511 2145 2787 8038 1521 1521 2769 6432 2769 738 2769 738 2823 679 1168 4761 6887 1416 2769 738 2823 679 1168 511 1777 2375 8038 1638 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 126
+*** Example ***
+guid: test-1
+input_ids: 101 1777 2375 8038 3221 6432 12797 8175 678 872 4638 1399 2099 511 2145 2787 8038 6434 872 1962 511 1777 2375 8038 6434 2644 1962 6435 6432 12797 8175 678 2644 511 2145 2787 8038 1638 511 2145 2787 8038 1638 511 1777 2375 8038 1638 6821 6804 3680 702 3299 4638 6820 3621 3189 3309 3221 1126 1384 4761 6887 1408 511 2145 2787 8038 1638 679 1922 6381 2533 1557 511 1777 2375 8038 6929 2644 1762 7213 6121 807 2807 6587 3621 3221 784 720 772 1501 1450 872 4761 6887 1408 511 2145 2787 8038 9470 8168 1658 9470 8168 511 1777 2375 8038 6929 6821 6804 2769 4692 800 6820 3221 12797 8175 702 9470 8168 2496 1184 4638 6413 12797 8175 702 1394 1398 3766 3300 818 862 4638 12797 8175 702 6874 3309 6435 7309 3300 784 720 1377 809 2376 1168 2644 4638 511 2145 2787 8038 1521 1728 711 2769 6821 3667 3198 7313 5632 2346 1139 1744 6587 749 12797 8175 702 1914 3299 4197 1400 4638 6413 6821 702 3621 7555 3766 6820 4197 1400 6821 7027 772 4495 749 3683 6772 1914 4638 6929 702 511 2145 2787 8038 1164 2622 6656 4005 5287 7032 12797 8175 4692 6821 6804 5543 679 5543 2376 2769 6760 12797 8175 678 4509 6435 1121 1048 511 1777 2375 8038 6929 6821 6804 4638 6413 2644 2802 12797 8175 678 8617 8171 8545 6821 702 4510 6413 749 1408 511 1777 2375 8038 6822 6121 1486 6418 12797 8175 678 1962 1408 511 2145 2787 8038 1914 2208 511 1777 2375 8038 12797 8175 511 1777 2375 8038 2970 6858 809 1400 2902 12797 8175 1962 1408 511 2145 2787 8038 12797 8175 511 1777 2375 8038 1638 2190 511 2145 2787 8038 12797 8175 1962 4638 6468 6468 1557 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 312
+*** Example ***
+guid: test-2
+input_ids: 101 2145 2787 8038 1506 1617 511 1777 2375 8038 1585 872 1962 511 2145 2787 8038 872 1962 511 1777 2375 8038 2644 6821 6804 3221 8617 1044 4495 3221 1416 511 2145 2787 8038 1638 511 1777 2375 8038 8617 1044 4495 2644 1962 2769 6821 6804 9470 8168 4638 2644 3300 3766 3300 6656 6821 702 1215 4415 5468 5143 1435 511 2145 2787 8038 3198 7313 511 1777 2375 8038 3221 679 3221 2644 4263 782 2376 2644 511 1777 2375 8038 6820 7027 3221 679 3221 2644 4263 782 1557 511 2145 2787 8038 679 3221 1557 2582 720 1568 511 1777 2375 8038 5445 684 511 1777 2375 8038 3221 6821 3416 4638 800 1762 2769 812 1062 1385 1215 749 6587 3621 679 4761 6887 3221 679 3221 2563 6381 6820 749 5314 800 2802 4510 6413 12797 8175 4684 3766 5310 800 2828 872 1384 4772 868 711 5165 2593 5468 5143 782 749 2644 6821 6804 5543 679 5543 5468 5143 677 800 1435 511 2145 2787 8038 2769 511 1777 2375 8038 1557 1044 4495 511 2145 2787 8038 2769 2769 679 4761 6887 800 1435 511 1777 2375 8038 2190 511 1777 2375 8038 2769 2218 6432 2644 6821 6804 5543 679 5543 5468 5143 677 800 1435 800 6821 702 2797 3322 1384 4772 12797 8175 4684 5314 800 2802 4510 6413 800 12797 8175 4684 3766 2970 5314 800 3678 779 2802 4510 6413 800 3678 779 738 3766 2970 679 4761 6887 784 720 1333 1728 1557 511 2145 2787 8038 2769 679 4761 6887 800 2769 6821 702 782 2769 6963 679 6371 6399 1408 511 1777 2375 8038 6821 702 5543 872 6963 679 6371 6399 1557 2644 6821 6804 1384 4772 4638 6413 800 2828 2644 1091 4708 4638 3221 6981 981 1068 5143 1557 872 722 1184 6656 800 5468 5143 6814 1408 511 2145 2787 8038 1557 511 2145 2787 8038 6820 3300 702 3766 1259 1259 1259 800 3221 2769 3301 1351 2218 7373 2769 2769 6432 872 3221 1004 6873 872 3221 948 7450 1408 511 1777 2375 8038 6820 3300 6656 800 4685 1905 511 1777 2375 8038 2190 1435 511 1777 2375 8038 679 3221 800 2828 872 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 382
+*** Example ***
+guid: test-3
+input_ids: 101 1777 2375 8038 1906 3800 8617 3300 1068 5143 2769 812 809 711 3221 6981 3300 1416 872 6821 6804 6656 800 2218 3221 6432 3249 6858 1068 5143 1408 6820 3221 2582 720 3416 1658 511 2145 2787 8038 2769 6963 679 6371 6399 6821 702 782 1408 511 1777 2375 8038 679 6371 6399 6821 702 782 1557 511 2145 2787 8038 1638 511 1777 2375 8038 6929 2644 6821 6804 4638 6413 2769 4692 749 12797 8175 678 3221 679 3221 1762 4491 5484 4689 6821 6804 4638 1416 1557 511 2145 2787 8038 1557 511 1777 2375 8038 2644 3221 679 3221 1762 4491 5484 4689 6821 6804 4638 1416 2787 5093 1765 1770 1557 511 2145 2787 8038 1557 3221 1557 2582 720 1568 511 1777 2375 8038 6821 702 1215 4415 4638 6413 12797 8175 2259 1557 12797 8175 702 1957 4638 2644 2582 720 1377 5543 679 6371 6399 1416 2769 6821 6804 928 2622 4638 6413 1288 2399 809 3341 511 2145 2787 8038 2769 3082 704 1744 12797 8175 3221 3680 702 3299 2769 5023 754 3221 6432 511 1777 2375 8038 679 3221 2769 812 4638 2692 2590 3221 6432 800 511 2145 2787 8038 2769 6371 6399 872 1505 511 1777 2375 8038 1044 4495 2644 6821 6804 4638 6413 1044 924 2898 12797 8175 678 6656 2644 6382 3926 3504 12797 8175 678 2218 6121 749 511 1777 2375 8038 2644 6821 702 1384 4772 800 679 1377 5543 6432 3300 12797 8175 1384 4772 4638 2644 6432 3221 1416 511 2145 2787 8038 6929 6929 872 2582 720 4761 6887 2769 3221 4491 5484 1408 511 1777 2375 8038 6820 2828 2644 1906 3800 4638 511 1777 2375 8038 2769 6821 6804 4692 749 12797 8175 678 928 2622 2644 3221 679 3221 2787 5093 1765 1770 1762 4491 5484 4689 6821 6804 511 2145 2787 8038 6929 872 2582 720 2458 749 2769 928 2622 749 1126 3613 5446 1567 2094 1521 1557 2218 2398 2382 4692 2769 1357 3867 511 1777 2375 8038 1044 4495 2769 812 6821 6804 3221 9470 8168 4638 9470 8168 4638 2769 812 6821 6804 3221 928 2622 3221 3300 4638 4761 6887 511 2145 2787 8038 872 6432 784 720 2769 2597 2769 12797 8175 3221 1914 2208 511 1777 2375 8038 6929 1044 4495 2644 3221 679 3221 6206 6821 4905 2578 2428 1408 1044 4495 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 410
+*** Example ***
+guid: test-4
+input_ids: 101 2145 2787 8038 4197 1400 2769 2218 4339 872 738 2823 2769 511 1777 2375 8038 1557 511 2145 2787 8038 872 2802 2769 1557 511 1777 2375 8038 6929 8617 1044 4495 3766 1068 5143 1044 4495 1963 3362 6432 2644 6821 4905 2578 2428 1215 4638 6821 702 1957 1894 12797 8175 1921 3612 3621 679 1905 4415 2769 6821 6804 4510 6413 5314 872 2802 1408 4635 1921 511 2145 2787 8038 1557 511 2145 2787 8038 872 872 872 1086 2802 872 1356 1356 511 1777 2375 8038 2769 6656 872 6382 3926 3504 12797 8175 4157 511 2145 2787 8038 5439 2094 9470 8168 2802 2802 2845 6356 511 1777 2375 8038 2644 4692 1416 511 1777 2375 8038 6821 702 3221 2644 4638 3326 1164 2644 1377 809 1343 2845 6356 511 2145 2787 8038 6929 511 2145 2787 8038 872 1157 511 1777 2375 8038 3221 800 2828 2644 4522 511 2145 2787 8038 872 1968 511 1777 2375 8038 5468 5143 782 2644 4692 12797 8175 678 2769 6821 6804 833 679 833 5314 2644 2802 511 2145 2787 8038 2769 6963 679 6371 6399 800 872 6656 2769 6432 6821 763 2397 1567 511 1777 2375 8038 3187 6389 3221 752 2658 3221 679 3221 6206 3018 3926 3504 4638 3198 952 6821 6804 2769 5314 2644 511 2145 2787 8038 872 3018 2533 12797 8175 749 872 3018 3018 511 2145 2787 8038 1068 2769 2230 752 1036 511 1777 2375 8038 872 679 6206 7733 782 1408 511 2145 2787 8038 2769 2218 7733 872 749 2823 3301 1351 1004 6873 12797 8175 702 511 1777 2375 8038 2644 511 1777 2375 8038 1557 7733 1916 749 1408 511 2145 2787 8038 1638 511 1777 2375 8038 6929 1962 749 3221 1416 1044 4495 6929 1168 2769 6432 749 511 2145 2787 8038 6929 872 3766 1762 2802 2769 4510 6413 2397 1658 511 1777 2375 8038 2769 7309 2644 6821 702 1215 4415 679 749 4638 511 2145 2787 8038 6821 6821 3221 872 812 1062 1385 4510 6413 1408 511 2145 2787 8038 6821 3221 872 812 1062 1385 4510 6413 1658 2769 9470 8168 2845 6356 511 1777 2375 8038 2644 679 727 6228 2644 2218 6432 511 2145 2787 8038 1521 2218 5023 4708 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+attention_mask: 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+token_type_ids: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+label: 0 (id = 0)
+input length: 391
+Writing example 10000
+Writing example 20000
+Writing example 30000
+Writing example 40000
+Writing example 50000
+Writing example 60000
+Writing example 70000
+Saving features into cached file ./path/data/b/cached_test_bert-base-chinese_428_test
+***** Running prediction  *****
+  Num examples = 73988
+  Batch size = 64
+Process rank: -1, device: cpu, n_gpu: 0, distributed training: False
+loading configuration file ./prev_trained_model/config.json
+Model config {
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "test",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": true,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-vocab.txt from cache at C:\Users\admin\.cache\torch\transformers\8a0c070123c1f794c42a29c6904beb7c1b8715741e235bee04aca2c7636fc83f.9b42061518a39ca00b8b52059fd2bede8daa613f8a8671500e518a8c29de8c00
+loading weights file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-chinese-pytorch_model.bin from cache at C:\Users\admin\.cache\torch\transformers\b1b5e295889f2d0979ede9a78ad9cb5dc6a0e25ab7f9417b315f0a2c22f4683d.929717ca66a3ba9eb9ec2f85973c6398c54c38a4faa464636a491d7a705f7eb6
+Weights of BertForSequenceClassification not initialized from pretrained model: ['classifier.weight', 'classifier.bias', 'lstm.weight_ih_l0', 'lstm.weight_hh_l0', 'lstm.bias_ih_l0', 'lstm.bias_hh_l0', 'lstm.weight_ih_l0_reverse', 'lstm.weight_hh_l0_reverse', 'lstm.bias_ih_l0_reverse', 'lstm.bias_hh_l0_reverse', 'lstm.weight_ih_l1', 'lstm.weight_hh_l1', 'lstm.bias_ih_l1', 'lstm.bias_hh_l1', 'lstm.weight_ih_l1_reverse', 'lstm.weight_hh_l1_reverse', 'lstm.bias_ih_l1_reverse', 'lstm.bias_hh_l1_reverse', 'fc.weight', 'fc.bias']
+Weights from pretrained model not used in BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+Training/evaluation parameters Namespace(adam_epsilon=1e-08, cache_dir='', config_name='', data_dir='./path/data', device=device(type='cpu'), do_eval=False, do_lower_case=True, do_predict=True, do_train=False, eval_all_checkpoints=True, gradient_accumulation_steps=1, learning_rate=2e-05, local_rank=-1, logging_steps=100, max_grad_norm=1.0, max_seq_length=428, max_steps=-1, model_name_or_path='bert-base-chinese', model_type='bert', n_gpu=0, no_cuda=False, num_train_epochs=1.0, output_dir='./outputs/test_output/bert', output_mode='classification', overwrite_cache=False, overwrite_output_dir=True, per_gpu_eval_batch_size=8, per_gpu_train_batch_size=8, save_steps=100, seed=42, task_name='test', tokenizer_name='', warmup_proportion=0.1, weight_decay=0.01)
+Model name './outputs/test_output/bert' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased). Assuming './outputs/test_output/bert' is a path or url to a directory containing tokenizer files.
+Didn't find file ./outputs/test_output/bert\added_tokens.json. We won't load it.
+Didn't find file ./outputs/test_output/bert\special_tokens_map.json. We won't load it.
+Didn't find file ./outputs/test_output/bert\tokenizer_config.json. We won't load it.
+loading file ./outputs/test_output/bert\vocab.txt
+loading file None
+loading file None
+loading file None
+Evaluate the following checkpoints: ['./outputs/test_output/bert']
+loading configuration file ./outputs/test_output/bert\config.json
+Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "finetuning_task": "test",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "num_labels": 2,
+  "output_attentions": false,
+  "output_hidden_states": true,
+  "output_past": true,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pruned_heads": {},
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 21128
+}
+
+loading weights file ./outputs/test_output/bert\pytorch_model.bin
